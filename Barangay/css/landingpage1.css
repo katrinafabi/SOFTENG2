@@ -1,0 +1,325 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+}
+
+/* NAV-BAR */
+#navbar {
+  overflow: hidden;
+  padding: 15px 40px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  flex-wrap: wrap;
+}
+
+#navbar a {
+  float: right;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 16px 40px 6px;
+  width: 80px;
+}
+
+/* Apply hover to all links except the signup button */
+#navbar a:not(.signupbtn):hover {
+  border-bottom: solid #3f896c 6px;
+}
+
+#navbar a.active {
+  border-bottom: solid #0e6c6c 6px;
+}
+
+#navbarlogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbarlogo h1 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+#navbar img {
+  width: 40px;
+  height: 48px;
+  align-items: center;
+}
+
+/* SIGN UP button */
+#navbar a.signupbtn {
+  padding: 16px 40px;
+  margin-left: 4px;
+  background-color: #0e6c6c;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover */
+}
+/* Custom hover effect for SIGN UP button */
+#navbar a.signupbtn:hover {
+  background-color: #3f896c; /* Change background color on hover */
+  color: white; /* Optional: ensure the text stays white */
+  transform: scale(1.05); /* Slight zoom effect */
+  border-bottom: none; /* No bottom border */
+}
+
+/* Collapse button styles */
+.collapse-btn {
+  display: none;
+  background-color: #0e6c6c;
+  color: white;
+  padding: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 1078px) {
+  #navbar a, .signupbtn {
+      font-size: 12px;
+      width: auto;
+  }
+}
+
+@media screen and (max-width: 906px) {
+  #navbar a, .signupbtn {
+      font-size: 10px;
+      width: auto;
+  }
+}
+
+  #sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgb(222, 223, 223);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    z-index: 1; /* Ensure sidebar is on top */
+}
+
+#sidebarlogo {
+  display: flex;
+  flex-direction: row; /* Change to row for horizontal alignment */
+  align-items: center; /* Vertically center the items */
+  justify-content: space-between; /* Add space between the items if necessary */
+  width: 100%; /* Ensure it takes the full width */
+  padding: 10px 10px 24px; /* Add padding if needed for spacing */
+}
+
+#sidebarlogo img {
+    width: 40px;
+    height: 40px;
+}
+
+#sidebarlogo h1 {
+    font-size: 13px;
+    margin: 0 10px; /* Ensure proper spacing between the text and close button */
+    flex-grow: 1; /* Allow the title to grow and push the close button to the right */
+}
+
+#sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebarlogo .closebtn {
+  font-size: 28px;
+  padding: 0px 8px; /* Space the close button */
+  margin-right: 16px;
+  cursor: pointer;
+  color: black; /* Ensure it’s visible on your sidebar */
+}
+
+#sidebarlogo .closebtn:hover {
+  color: white;
+  background-color: #0e6c6c;
+}
+
+/* Toggle button for sidebar */
+#sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    background-color: #0e6c6c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.sidebar-button{
+  width: 48px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 864px) {
+    /* Hide the navbar links and show the sidebar toggle button */
+    #navbar a {
+        display: none;
+    }
+
+    #sidebar-toggle {
+        display: block;
+    }
+}
+
+/* When the sidebar is opened */
+.open-sidebar {
+    width: 220px;
+}
+
+#sidebartopwimg{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0px 16px 8px;
+}
+
+#sidebartopwimg.active {
+  background-color: #04AA6D;
+}
+
+#sidebartopwimg.active span {
+  color: white; /* Text color for sidebartopwimg anchors when active */
+}
+
+#sidebartopwimg:hover:not(.active) {
+  background-color: #047438dd;
+  color: white;
+}
+
+#sidebartopwimg:not(.active):hover span {
+  color: white;
+}
+
+#sidebartopwimg-home:hover img {
+  content: url('css/pictures/sidebar/homeactive.svg');
+  transition: 0.3s;
+}
+
+#sidebartopwimg span{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+#sidebartopwimg img{
+  padding: 8px 0px 8px 24px;
+  width: 32px;
+  height: 28px;
+  margin-right: 16px;
+}
+ /* */
+ 
+  section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow:hidden;
+    background-image: url(pictures/landingpg/lpbg.svg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #aboutsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 380px;
+    width: 100%;
+    height: 100%;
+  }
+
+  #leftsbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #leftsbox h1{
+    font-size: 26px;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    text-align: center;
+    max-width: 460px;
+    margin: 0;
+  }
+
+  #leftsbox p{
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    text-align: justify;
+    padding-bottom: 10px;
+    font-size: 11.5px;
+    max-width: 402px;
+  }
+
+  #leftsbox button{
+    background-color: #106b6f;
+    border-radius: 4px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    width: auto;
+    min-height: 55px;
+    min-width: 40px;
+    outline: none;
+    overflow: hidden;
+    padding: 8px 54px 8px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  #leftsbox button:hover,
+  .button:focus {
+    opacity: .75;
+  }

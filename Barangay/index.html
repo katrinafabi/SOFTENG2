@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/landingpage1.css">
+    <link rel="icon" type="image/x-icon" href="css/pictures/Logo/brgylogo.svg">
+    <title>Barangay 433 Zone 44</title>
+</head>
+<body>
+
+    <div id="navbar">
+        <button id="sidebar-toggle" class="sidebar-button">&#9776;</button> <!-- Sidebar toggle button -->
+        <div id="navbarlogo">
+            <img src="css/pictures/Logo/brgylogo.svg" alt="none.png">
+            <h1>Barangay 433 Zone 44</h1>
+        </div>
+        <a href="signup.php" class="signupbtn">SIGN UP</a>
+        <a href="login.php">LOGIN</a>
+        <a class="active" href="landingpage.html">HOME</a>
+        <a href="aboutus.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+    <div id="sidebar">
+        <div id="sidebarlogo">
+            <img src="css/pictures/Logo/brgylogo.svg" alt="none.png">
+            <h1>DocQuest</h1>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+        </div>
+
+        <a href="index.html">
+            <div id="sidebartopwimg" class="sidebartopwimg active">
+                <img src="css/pictures/sidebar/homeactive.svg" alt="home">
+                <span>Home</span>    
+            </div>
+        </a>
+        <a href="aboutus.html">
+            <div id="sidebartopwimg" class="sidebartopwimg">
+                <img src="css/pictures/sidebar/about.svg" alt="aboutus">
+                <span>About</span>    
+            </div>
+        </a>
+
+        <a href="contact.html" class="active">
+            <div id="sidebartopwimg" class="sidebartopwimg">
+                <img src="css/pictures/sidebar/contacts.svg" alt="contact">
+                <span>Contact us</span> 
+            </div>
+        </a>
+
+        <a href="login.php">
+            <div id="sidebartopwimg" class="sidebartopwimg">
+                <img src="css/pictures/sidebar/login.svg" alt="login">
+                <span>Login</span>    
+            </div>
+        </a>
+        <a href="signup.php" class="signupbtn">
+            <div id="sidebartopwimg" class="sidebartopwimg">
+                <img src="css/pictures/sidebar/signup.svg" alt="signup">
+                <span>Signup</span>    
+            </div>
+        </a>
+    </div>
+
+    <section>
+        <div id="aboutsection">
+            <div id="leftsbox">
+                <h1>Welcome to Barangay 433 Zone 44 Official Website</h1>
+                <p>Stay connected with the latest news, events, and initiatives shaping our barangay's future. From community programs to local services, we're here to serve you better. Join us as we celebrate our culture, heritage, and the spirit of unity that defines us. Together, we can build a stronger, more inclusive barangay for generations to come.
+                </p>
+                <button onclick="document.location='signup.php'">Get Started</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        // Toggle sidebar when sidebar-toggle button is clicked
+        document.getElementById("sidebar-toggle").addEventListener("click", openSidebar);
+    </script>
+</body>
+</html>

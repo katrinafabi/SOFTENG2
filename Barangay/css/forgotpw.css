@@ -1,0 +1,203 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  body{
+    height: 100vh;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  }
+
+  #navbar {
+    display: flex; /* Use flexbox for the navbar */
+    justify-content: space-between; /* Space between logo/title and the signup button */
+    padding: 16px 40px;
+    overflow: hidden;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Add this line to push signupbtn to the right */
+  }
+  
+  #navbar a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 24px 8px;
+    width: 60px;
+  }
+  
+  /* Apply hover to all links except the signup button */
+  #navbar a:not(.signupbtn):hover {
+    border-bottom: solid #3f896c 6px;
+  }
+  
+  #navbar a.active {
+    border-bottom: solid #0e6c6c 6px;
+  }
+  
+  #navbarlogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change from center to space-between */
+    width: 100%; /* Ensure it takes full width */
+  }
+  
+  #navbarlogo h1 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  
+  #navbar img {
+    width: 40px;
+    height: 48px;
+    align-items: center;
+  }
+  
+  /* SIGN UP button */
+  #navbar a.signupbtn {
+    margin-left: auto;
+    background-color: #0e6c6c;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover */
+  }
+  /* Custom hover effect for SIGN UP button */
+  #navbar a.signupbtn:hover {
+    background-color: #3f896c; /* Change background color on hover */
+    color: white; /* Optional: ensure the text stays white */
+    transform: scale(1.05); /* Slight zoom effect */
+    border-bottom: none; /* No bottom border */
+  }
+
+  section{
+    justify-content: center;
+    align-items: center;
+    background-image: url(pictures/fpw/fwpbg.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #aboutsection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0px 60px 20px;
+  }
+
+  #containerform{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(240, 239, 239);
+    border: 0.2px solid gray;
+    box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.287);
+  }
+
+  #pictureform{
+    display: flex;
+    background-color: #034a4e;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 324px;
+    background-image: url(pictures/fpw/fwpicon.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  #formbox{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    max-width: auto;
+  }
+
+  form {
+    display: flex; /* Add this */
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 32px 8px;
+    width: 100%;
+  }
+  
+  form h1{
+    color: #04AA6D;
+    font-size: 32px;
+    margin: 0px 0px 8px;
+  }
+  
+  form h6{
+    font-size: 12px;
+    font-weight: lighter;
+    margin: 0px 0px 24px;
+  }
+  
+  form p{
+    text-align: center;
+    font-size: 10px;
+    margin-top: 16px;
+  }
+  
+  #inp1 {
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap to the next line if needed */
+    justify-content: space-between;
+    width: 100%; /* Set the width to 100% to match the width of the form */
+    margin-bottom: 8px;
+  }
+  
+  #inp1 input {
+    flex: 1; /* Allow inputs to expand and fill the available space */
+    margin-bottom: 6px; /* Add space between input rows */
+    padding: 10px;
+    border: none;
+    background-color: rgb(240, 239, 239);
+    border-bottom: 2px solid #252525;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  
+  #inp1label{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  #inp1label label{
+    font-weight: bold;
+    font-size:12.5px;
+    margin-left: 5px;
+  }
+  
+  .button {
+    padding: 8px;
+    border: none;
+    background-color: #106b6f;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #034a4e;
+  }

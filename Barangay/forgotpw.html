@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/forgotpw.css">
+    <link rel="icon" type="image/x-icon" href="css/pictures/Logo/brgylogo.svg">
+    <title>Forgot Password</title>
+</head>
+<body>
+    <div id="navbar">
+            <div id="navbarlogo">
+                <img src="css/pictures/Logo/brgylogo.svg" alt="none.png">
+                <h1>Barangay 433 Zone 44</h1>
+                <a href="login.php" class="signupbtn">SIGNUP</a>
+            </div>
+        </div>
+    <section>
+        <div id="aboutsection">
+            <div id="containerform">
+                <div id="pictureform"></div>
+            <div id="formbox">
+                <form id="login-form" action="phpexecution/send_reset_email.php" method="post">
+                    <h1>Forgot Password?</h1>
+                    <h6>No worries, we'll send you reset instructions.</h6>
+
+                    <div id="inp1">
+                        <div id="inp1label">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@workingemail.com" required>
+                        </div>
+                    </div>
+                        <button class="button">Reset Password</button>
+                        <p>&#x25c0; <a href="login.php" style="text-decoration: none;">Back to login</a></p>
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function() {
+        $('#login-form').submit(function(event) {
+            // Prevent default form submission
+            event.preventDefault();
+    
+            // Serialize form data
+            var formData = $(this).serialize();
+    
+            // Send form data to the server
+            $.ajax({
+                type: 'POST',
+                url: 'phpexecution/send_reset_email.php',
+                data: formData,
+                success: function(response) {
+                    // Handle server response
+                    alert('' + response);
+                    if (response.trim() === 'Successful') { // Ensure that 'Success' is returned exactly
+                        // Redirect to the dashboard or any other page
+                        window.location.href = 'https://barangay-433-zone-44.000webhostapp.com/Barangay/dashboard.php';
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

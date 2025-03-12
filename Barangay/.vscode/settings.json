@@ -1,0 +1,6 @@
+{
+    "livePreview.defaultPreviewPath": "/landingpage.html",
+    "liveServer.settings.port": 5501,
+    "sqltools.connections": [],
+    "sqltools.useNodeRuntime": true
+}
